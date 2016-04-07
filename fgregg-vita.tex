@@ -1,0 +1,312 @@
+%%% A template to produce a nice-looking Curriculum Vitae.
+%%% Kieran Healy <kjhealy@gmail.com>
+%%% Most recent version is at http://kjhealy.github.com/kjh-vita
+%%%
+%%% ------------------------------------------------------------------------
+%%% Requirements (should be included in a modern tex distribution):
+%%% ------------------------------------------------------------------------
+%%% xelatex
+%%% fontspec.sty
+%%% hyperrref.sty
+%%% xunicode.sty
+%%% color.sty
+%%% url.sty
+%%% fancyhdr.sty
+%%%
+%%% ------------------------------------------------------------------------
+%%% Optional
+%%% ------------------------------------------------------------------------
+%%% git
+%%% vc.sty
+%%% revnum.sty
+%%% Fonts
+%%%
+%%% ------------------------------------------------------------------------
+%%% Note
+%%%------------------------------------------------------------------------
+%%% Because this is a hand-tweaked file, be on the look out for \medksip, 
+%%% \bigskip and \newpage commands here and there, which are used to balance
+%%% the layout or avoid widows & orphans, etc. You should of course add or 
+%%% remove these as needed.
+%%%------------------------------------------------------------------------
+
+\documentclass[11pt]{article}
+
+%%%------------------------------------------------------------------------
+%%% Metadata
+%%%------------------------------------------------------------------------
+
+%% Change as needed. Or just add me as a coauthor. Only some of these are 
+%% used below in the hyperref declaration and address banner section.
+\def\myauthor{Forest Gregg}
+\def\mytitle{Vita}
+\def\mycopyright{\myauthor}
+\def\mykeywords{}
+\def\mybibliostyle{plain}
+\def\mybibliocommand{}
+\def\mysubtitle{}
+\def\myaffiliation{University of Chicago}
+\def\myaddress{Sociology Department}
+\def\myemail{fgregg@uchicago.edu}
+%\def\myweb{http://www.kieranhealy.org}
+\def\myphone{(773) 888-2718}
+%\def\myfax{(919) 660-5623}
+\def\myversion{}
+\def\myrevision{}
+
+
+%\def\myaffiliation{Duke University}
+%\def\myauthor{Kieran Healy}
+\date{} % not used (revision control instead)
+\def\mykeywords{Forest, Gregg, Forest Gregg, Vita, CV, Resume, Sociology}
+
+%%%------------------------------------------------------------------------  
+%%% Git version tracking 
+%%%------------------------------------------------------------------------
+
+%% If you don't use git or the vc package (from CTAN), comment this out.
+%% If you comment it out, be sure to remove the \rfoot comment below, too.
+%\input{vc}
+
+%%%------------------------------------------------------------------------
+%%% Required style files
+%%%------------------------------------------------------------------------
+\usepackage{url,fancyhdr}
+%%\usepackage{revnum} % for reverse-numbered publications (revnumerate environment) if needed.
+
+%% needed for xelatex to work
+%\usepackage{fontspec}
+%\usepackage{xunicode}
+
+%% color for the links 
+\usepackage[usenames,dvipsnames]{color}
+
+%% hyperlinks
+\usepackage[
+	colorlinks=true,
+	urlcolor=BlueViolet,
+	plainpages=false,
+  	pdfpagelabels,
+  	bookmarksnumbered,
+  	pdftitle={\mytitle},
+  	pagebackref,
+  	pdfauthor={\myauthor},
+  	pdfkeywords={\mykeywords}
+  	]{hyperref}
+
+%%%------------------------------------------------------------------------
+%%% Document
+%%%------------------------------------------------------------------------
+\begin{document}
+
+%% Choose fonts for use with xelatex
+%% Minion and Myriad are widely available, from Adobe. 
+%% Pragmata is available to buy at http://www.fsd.it/fonts/pragma.htm
+%% and is worth every penny. Any good monospace font will work fine, though.
+%% Consolas or inconsolata are good alternatives.
+%\setromanfont[Mapping={tex-text},Numbers={OldStyle},Ligatures={Common}]{Minion Pro} 
+%\setsansfont[Mapping=tex-text,Colour=AA0000]{Myriad Pro}
+%\setmonofont[Mapping=tex-text,Scale=0.9]{Pragmata} 
+
+
+%%%------------------------------------------------------------------------
+%%% Local commands
+%%%------------------------------------------------------------------------
+
+%% Marginal header
+%% Note: as the document goes on you may need to introduce a (gradually increasing)
+%% \vspace element to keep the marginal header pleasingly aligned with the first 
+%% item in the body text. Like this: \marginhead{{\vskip 0.4em}Grants}, or 
+%% \marginhead{{\vskip 0.8em}Service}. Experiment as needed.
+\newcommand{\marginhead}[1]{\marginpar{\textsf{{\footnotesize\vspace{-1em}\flushright #1}}}}
+
+
+%% custom ampersand (font consistent with the one chosen above)
+\newcommand{\amper}{{\fontspec[Scale=.95,Colour=AA0000]{Minion Pro Medium}\selectfont\&\,}}
+
+%% No bullets on labels
+\renewcommand{\labelitemi}{~} 
+
+%% Custom hanging indent for vita items
+\def\ind{\hangindent=1 true cm\hangafter=1 \noindent}
+%\def\ind{\hangindent=18pt\hangafter=1 \noindent}
+\def\labelitemi{~}
+\renewcommand{\labelitemii}{~}
+
+%%%------------------------------------------------------------------------
+%%% Page layout
+%%%------------------------------------------------------------------------
+\pagestyle{fancy}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead{}
+\fancyfoot{}
+\rhead{{\scriptsize\thepage}}
+
+%% git revision control footer 
+%\rfoot{\texttt{\scriptsize \VCRevision\ on \VCDateTEX}} % git revision info inserted via external script -- see docs for vc package for details. comment out this line if you're not using vc, and also remove the \input{vc} line above.
+
+%%%------------------------------------------------------------------------
+%%% Address and contact block
+%%%------------------------------------------------------------------------
+\begin{minipage}[t]{2.95in}
+ \flushright {\footnotesize \href{http://sociology.uchicago.edu}{Department of Sociology} \\ University of Chicago \\ 1126 E. 59th St. \\ \vspace{-0.05in} Chicago, \textsc{IL} 60608}  
+  
+\end{minipage}
+\hfill     
+%\begin{minipage}[t]{0.0in}
+% dummy (needed here)
+%\end{minipage}
+\hfill
+\begin{minipage}[t]{1.7in}
+  \flushright \footnotesize Phone: \myphone \\ 
+%  Fax: \myfax  \\ 
+  {\scriptsize  \texttt{\href{mailto:\myemail}{\myemail}}} \\
+%  {\scriptsize  \texttt{\href{\myweb}{\myweb}}}
+\end{minipage}
+
+
+\medskip
+
+%% Name 
+\noindent{\Large {\textsc{Forest Gregg}}}
+\reversemarginpar
+
+\medskip       
+
+%% Education
+
+\marginhead{{\vskip 0.3em} Education}
+
+\noindent\emph{University of Chicago \vspace{0.01in}}
+
+\ind 2012. MA, Sociology.
+
+\medskip
+
+\ind 2004. BA, Sociology. 
+
+%% ProfessionaL
+\medskip
+\marginhead{Professional}
+
+\noindent\emph{DataMade \vspace{0.01in}}
+
+\ind 2013--Current, Partner
+
+\medskip
+
+\noindent\emph{National Social Life, Health, and Aging Project \vspace{0.01in}}
+
+\ind 2012--2014. Research Assistant
+
+\medskip
+
+\noindent\emph{Frybrid \vspace{0.01in}}
+
+\ind 2006--2008. Researcher.
+
+\medskip
+
+\noindent\emph{Runaway Circus \vspace{0.01in}}
+
+\ind 2004--2006. Co-founder and Partner. 
+\medskip
+
+\noindent\emph{Harvard Student Study \vspace{0.01in}}
+
+\ind 2004. Research Assistant.
+
+
+%% Publications
+\marginhead{{\vskip 0.3em}Publications}
+
+\medskip
+\noindent\emph{Books \vspace{0.01in}}
+
+\ind  Forest Gregg. 2008. \emph{SVO: Powering Your Vehicle with Straight Vegetable Oil}. Gabriola Island, B.C:~New Society Publishers.\vspace{-.075in}
+
+\normalsize
+
+\bigskip
+\noindent\emph{Journal articles \vspace{0.05in}}
+
+\ind Forest Gregg, Katie O'Doherty, Phil Schumm, Martha McClintock, Elbert S. Huang. 2013. ``Glycosylated Hemoglobin Testing the National Social Life, Health, and Aging Project'' \emph{Journals of Gerontology, Series B: Psychological Sciences and Social Sciences}
+
+\ind Forest Gregg. 2009. ``Waste Vegetable Oil as Motor Fuel.'' \emph{BackHome Magazine} 103:~36-39.
+
+\normalsize
+
+\bigskip
+\noindent\emph{Book Chapters \vspace{0.05in}}
+
+
+\ind John Levi Martin and Forest Gregg. 2015. ``Was Bourdieu a Field
+Theorist?'' \emph{Bourdieu's Theory of Social Fields: Concepts and
+  Applications} New York, NY: Routledge.
+
+\marginhead{{\vskip 0.4em}Grants and \newline Awards}
+\medskip
+
+\ind 2013. Code Sprint Grant, Mozilla OpenNews
+ 
+\ind 2010. Social Sciences Fellowship, University of Chicago.
+
+
+
+\bigskip
+%% Professional Memberships
+
+\marginhead{{\vskip 0.4em}Professional Memberships}
+\medskip
+\noindent\emph{American Sociological Association \vspace{0.01in}}
+
+\ind 2010--Current. Member. Section memberships: Mathematical Sociology
+
+\bigskip
+\marginhead{{\vskip 0.4em}Department and School Service}
+\medskip
+
+\noindent\emph{Computational Social Science Workshop \vspace{0.01in}}
+
+\ind 2012--Current. Founding organizer.
+
+\medskip
+
+\noindent\emph{Online News Association \vspace{0.01in}}
+
+\ind 2014. Conference Program Review Committee Member
+
+\medskip
+
+\noindent\emph{The 5th World Congress on Social Simulation \vspace{0.01in}}
+
+\ind 2014. Program Committee Member
+
+\bigskip
+\marginhead{{\vskip 0.4em}Teaching}
+\medskip
+
+\noindent\emph{Social Science Inquiry II \vspace{0.01in}}
+
+\ind 2015. Instructor
+
+\medskip
+
+
+\noindent\emph{Statistical Methods of Research I \vspace{0.01in}}
+
+\ind 2012--2013. Teaching Assistant
+\medskip
+
+\noindent\emph{Applied Hierarchical Linear Models \vspace{0.01in}}
+
+\ind 2012--2013. Teaching Assistant
+
+
+
+
+\end{document}
+\medskip
+\marginhead{Works in\newline Progress}
+
+\marginhead{Research\newline Positions}
